@@ -52,13 +52,11 @@ fi
 
 # LLVM_PATH  => The place where I have all the LLVM tools
 if [[ $RA == "sora" ]]; then
-  LLVM_PATH=/home/munden/LLVM/11.1.0/llvm-project/build/bin
+  LLVM_PATH=$HOME/LLVM/11.1.0/llvm-project/build/bin
 else
   LLVM_PATH=/usr/bin
+  #LLVM_PATH=/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin
 fi
-#LLVM_PATH=/home/munden/LLVM/11.1.0/llvm-project/cb-build/bin
-#LLVM_PATH=/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin
-#LLVM_PATH=/usr/bin
 
 [[ -d "${LLVM_PATH}" ]] || {
 	echo "One must define LLVM_PATH before running tf"
@@ -67,8 +65,48 @@ fi
 
 # -- # -- # -- # -- # -- # -- # -- # -- # -- # -- # -- # -- # -- # -- # -- # -- 
 
-# THIS PART IS LEFT AS AN EXAMPLE FOR THE PEOPLE WORKING WITH PIN!
+# DYNAMORIO 
+[[ -n $DYNRIO ]] || DYNRIO=0
 
+if [[ $DYNRIO -eq 1 ]]; then
+  # DYN_PATH   => The place where I keep the dynamoRIO
+	#DYN_PATH="$HOME/DynamoRIO"
+  DYN_PATH="$HOME/dynamorio-master/build"
+  [[ -n $DYN_PATH ]] || {
+		echo "One must define the DYNRIO before when DYNRIO=1"
+		exit 1
+	}
+  
+  # DYN_LIB    => The place where I keep the DynamoRIO lib implemented.
+	DYN_LIB="$DYN_PATH/samples/bin/lib"
+  [[ -n $DYN_LIB ]] || {
+		echo "One must define PIN_LIB when PIN=1"
+		exit 1
+	}
+
+  # DYN_TOOL   => The tool used
+  #[[ -n $DYN_TOOL ]] || {
+  #  echo "You must define a DYN_TOOL variable before using tf with DynamoRIO"
+  #  exit 1
+  #}
+
+  # DYN_FLAGS  => Flags to pass to DynamoRIO
+  [[ -n $DYN_FLAGS ]] || DYN_FLAGS=" "
+
+  echo "DYN_PATH is set to $DYN_PATH"
+  echo "DYN_LIB is set to $DYN_LIB"
+  echo "DYN_TOOL is set to $DYN_TOOL"
+  
+  #echo "Compiling DYN TOOLS"
+  #DYN_ROOT=DYN_PATH make -C $DYN_LIB || {
+  #  echo "Error compiling DYNRIO TOOLS"
+  #  exit 1
+  #}
+  
+fi
+
+
+# THIS PART IS LEFT AS AN EXAMPLE FOR THE PEOPLE WORKING WITH PIN!
 # PIN 
 [[ -n $PIN ]] || PIN=0
 

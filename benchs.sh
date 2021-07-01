@@ -55,17 +55,30 @@ function PolyBench(){
   walk "${dirs[@]}"
 }
 
+# function cBench(){
+#   dirs=("security_rijndael_d/src" "automotive_susan_c/src"
+#         "security_rijndael_e/src" "consumer_jpeg_c/src" "consumer_lame/src"
+#         "bzip2e/src" "telecom_adpcm_d/src" "bzip2d/src"
+#         "network_dijkstra/src" "office_stringsearch1/src"
+#         "consumer_tiffdither/src" "automotive_qsort1/src" 
+#         "consumer_jpeg_d/src" "automotive_susan_e/src" 
+#         "automotive_bitcount/src" "security_blowfish_e/src" "consumer_tiff2bw/src"
+#         "telecom_CRC32/src" "security_sha/src" "consumer_tiffmedian/src"
+#         "automotive_susan_s/src" "network_patricia/src" "telecom_adpcm_c/src"
+#         "consumer_tiff2rgba/src" "security_blowfish_d/src")
+      
+#   cant=("consumer_mad/src" "office_ispell/src" "office_ghostscript/src" "office_rsynth/src"
+#   "security_pgp_d/src" "security_pgp_e/src" "telecom_gsm/src")
+  
+#   walk "${dirs[@]}"
+# }
+
 function cBench(){
-  dirs=("security_rijndael_d/src" "automotive_susan_c/src"
-        "security_rijndael_e/src" "consumer_jpeg_c/src" "consumer_lame/src"
-        "bzip2e/src" "telecom_adpcm_d/src" "bzip2d/src"
-        "network_dijkstra/src" "office_stringsearch1/src"
-        "consumer_tiffdither/src" "automotive_qsort1/src" 
-        "consumer_jpeg_d/src" "automotive_susan_e/src" 
-        "automotive_bitcount/src" "security_blowfish_e/src" "consumer_tiff2bw/src"
-        "telecom_CRC32/src" "security_sha/src" "consumer_tiffmedian/src"
-        "automotive_susan_s/src" "network_patricia/src" "telecom_adpcm_c/src"
-        "consumer_tiff2rgba/src" "security_blowfish_d/src")
+  dirs=("automotive_bitcount/src" "automotive_qsort1/src" "bzip2e/src" "consumer_jpeg_d/src"
+    "consumer_lame/src" "consumer_tiff2bw/src" "consumer_tiffmedian/src" "network_dijkstra/src" 
+    "network_patricia/src" "office_stringsearch1/src" "security_blowfish_e/src" "security_rijndael_e/src"
+     "security_sha/src"  "telecom_CRC32/src"
+    )
       
   cant=("consumer_mad/src" "office_ispell/src" "office_ghostscript/src" "office_rsynth/src"
   "security_pgp_d/src" "security_pgp_e/src" "telecom_gsm/src")

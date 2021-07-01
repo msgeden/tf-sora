@@ -147,6 +147,12 @@ if [[ -n $CLEAN && $CLEAN -eq 1 ]]; then
   exit 0
 fi
 
+
+if [[ -n $DYNRIO && $DYNRIO -eq 1 ]]; then
+  # replace the function `execute`
+  source "exec_dyn.sh"
+fi
+
 if [[ -n $PIN && $PIN -eq 1 ]]; then
   # replace the function `execute`
   source "exec_pin.sh"
