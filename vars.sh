@@ -51,7 +51,14 @@ fi
 # -- # -- # -- # -- # -- # -- # -- # -- # -- # -- # -- # -- # -- # -- # -- # -- 
 
 # LLVM_PATH  => The place where I have all the LLVM tools
-LLVM_PATH=""
+if [[ $RA == "sora" ]]; then
+  LLVM_PATH=/home/munden/LLVM/11.1.0/llvm-project/build/bin
+else
+  LLVM_PATH=/usr/bin
+fi
+#LLVM_PATH=/home/munden/LLVM/11.1.0/llvm-project/cb-build/bin
+#LLVM_PATH=/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin
+#LLVM_PATH=/usr/bin
 
 [[ -d "${LLVM_PATH}" ]] || {
 	echo "One must define LLVM_PATH before running tf"

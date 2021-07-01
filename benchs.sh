@@ -73,6 +73,12 @@ function cBench(){
   walk "${dirs[@]}"
 }
 
+function cBench-113(){
+  dirs=("automotive_susan_c/src" "consumer_tiffdither/src" "security_sha/src")
+  
+  walk "${dirs[@]}"
+}
+
 function cpu2006(){
   dirs=("400.perlbench/rbc/" "401.bzip2/rbc/" "403.gcc/rbc/" "429.mcf/rbc/"
         "433.milc/rbc/" "444.namd/rbc/" "445.gobmk/rbc/"
@@ -81,10 +87,10 @@ function cpu2006(){
   walk "${dirs[@]}"
 }
 
-benchs=( "ASC_Sequoia" "BenchmarkGame" "BitBench" "CoyoteBench" "DOE_ProxyApps_C" 
-  "Dhrystone" "McGill" "MiBench" "Misc"  "Shootout" "Stanford" "Fhourstones" 
-  "Linpack" "mediabench" "ASCI_Purple" "Fhourstones_31" "PolyBench"
-  "SciMark2-C" "sim" "mafft" "tramp3d-v4" "llubenchmark" "nbench" "Ptrdist"
-  "Trimaran" "TSVC" "PAQ8p" "NPB-serial" "VersaBench" "FreeBench"
-  "MallocBench" "McCat" "Olden" "Prolangs-C" "cpu2006")
+#benchs=( "ASC_Sequoia" "BenchmarkGame" "BitBench" "CoyoteBench" "DOE_ProxyApps_C"
+#  "Dhrystone" "McGill" "MiBench" "Misc"  "Shootout" "Stanford" "Fhourstones"
+#  "Linpack" "mediabench" "ASCI_Purple" "Fhourstones_31" "PolyBench"
+#  "SciMark2-C" "sim" "mafft" "tramp3d-v4" "llubenchmark" "nbench" "Ptrdist"
+#  "Trimaran" "TSVC" "PAQ8p" "NPB-serial" "VersaBench" "FreeBench"
+#  "MallocBench" "McCat" "Olden" "Prolangs-C" "cpu2006")
 
