@@ -74,20 +74,14 @@ function PolyBench(){
 # }
 
 function cBench(){
-  dirs=("automotive_bitcount/src" "automotive_qsort1/src" "bzip2e/src" "consumer_jpeg_d/src"
-    "consumer_lame/src" "consumer_tiff2bw/src" "consumer_tiffmedian/src" "network_dijkstra/src" 
-    "network_patricia/src" "office_stringsearch1/src" "security_blowfish_e/src" "security_rijndael_e/src"
-     "security_sha/src"  "telecom_CRC32/src"
-    )
-      
+   dirs=("automotive_bitcount/src" "automotive_qsort1/src" "bzip2e/src" "consumer_jpeg_d/src"
+     "consumer_lame/src" "consumer_tiff2bw/src" "consumer_tiffmedian/src" "network_dijkstra/src" 
+     "network_patricia/src" "office_stringsearch1/src" "security_blowfish_e/src" "security_rijndael_e/src"
+      "security_sha/src"  "telecom_adpcm_c/src" "telecom_CRC32/src"
+     )
+     
   cant=("consumer_mad/src" "office_ispell/src" "office_ghostscript/src" "office_rsynth/src"
   "security_pgp_d/src" "security_pgp_e/src" "telecom_gsm/src")
-  
-  walk "${dirs[@]}"
-}
-
-function cBench-113(){
-  dirs=("automotive_susan_c/src" "consumer_tiffdither/src" "security_sha/src")
   
   walk "${dirs[@]}"
 }

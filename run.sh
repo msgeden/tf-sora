@@ -130,7 +130,11 @@ function walk() {
 
 source "vars.sh"
 source "benchs.sh"
-source "comp.sh"
+if [[ -n $STATIC_LIBC && $STATIC_LIBC -eq 1 ]]; then
+  source "comp-static.sh"
+else
+  source "comp-dynamic.sh"
+fi
 source "exec.sh"
 
 if [[ -n $CLEAN && $CLEAN -eq 1 ]]; then
