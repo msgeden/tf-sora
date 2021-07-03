@@ -2,7 +2,8 @@
 
 # this is left as an example 
 function compile() {
-  
+  SORA_LIBC=$HOME/musl/install
+  NAIVE_LIBC=$HOME/musl/install-naive
   # source_files is the variable with all the files we're gonna compile
   echo "parallel --tty --jobs=${JOBS} $LLVM_PATH/$COMPILER $COMPILE_FLAGS $OFLAGS -fno-omit-frame-pointer -fno-stack-protector -fno-asynchronous-unwind-tables -fno-dwarf2-cfi-asm  \
       -mllvm --regalloc=$RA \
@@ -22,11 +23,11 @@ function compile() {
 
   #instrumented musl libc
   if [[ $RA == "sora" ]]; then
-    echo "  $LLVM_PATH/$COMPILER -static /home/munden/musl/install/lib/libc.a *.o -lm -o $exe_name"
-    $LLVM_PATH/$COMPILER -static /home/munden/musl/install/lib/libc.a *.o -lm -o $exe_name
+    echo "  $LLVM_PATH/$COMPILER -static $SORA_LIBC/lib/libc.a *.o -lm -o $exe_name"
+    $LLVM_PATH/$COMPILER -static $SORA_LIBC/lib/libc.a *.o -lm -o $exe_name
   else
-    echo "  $LLVM_PATH/$COMPILER -static /home/munden/musl/install-naive/lib/libc.a *.o -lm -o $exe_name"
-    $LLVM_PATH/$COMPILER -static /home/munden/musl/install-naive/lib/libc.a *.o -lm -o $exe_name
+    echo "  $LLVM_PATH/$COMPILER -static $NAIVE_LIBC/lib/libc.a *.o -lm -o $exe_name"
+    $LLVM_PATH/$COMPILER -static $NAIVE_LIBC/lib/libc.a *.o -lm -o $exe_name
   fi
 
   
