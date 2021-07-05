@@ -19,7 +19,7 @@ function execute() {
   
  
   cmd="$TIMEOUT --signal=TERM ${RUNTIME} \
-       $DYN_PATH/bin64/drrun -t drcachesim -simulator_type basic_counts\
+       $DYN_BIN $DYN_CMD \
        $DYN_FLAGS \
        -- ./$exe $RUN_OPTIONS < $STDIN " ;
 

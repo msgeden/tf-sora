@@ -131,9 +131,17 @@ function walk() {
 source "vars.sh"
 source "benchs.sh"
 if [[ -n $STATIC_LIBC && $STATIC_LIBC -eq 1 ]]; then
-  source "comp-static.sh"
+  if [[ -n $NAIVE && $NAIVE -eq 1 ]]; then
+    source "comp-static-naive.sh"
+  else
+    source "comp-static.sh"
+  fi
 else
-  source "comp-dynamic.sh"
+  if [[ -n $NAIVE && $NAIVE -eq 1 ]]; then
+    source "comp-dynamic-naive.sh"
+  else
+    source "comp-dynamic.sh"
+  fi
 fi
 source "exec.sh"
 
