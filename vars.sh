@@ -58,6 +58,9 @@ else
   #LLVM_PATH=/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin
 fi
 
+if [[ $INSTRUMENT == 1 ]]; then
+  LLVM_PATH=$HOME/LLVM/11.1.0/llvm-project/build/bin
+fi
 [[ -d "${LLVM_PATH}" ]] || {
 	echo "One must define LLVM_PATH before running tf"
 	exit 1

@@ -67,24 +67,24 @@ function PolyBench(){
 #         "automotive_susan_s/src" "network_patricia/src" "telecom_adpcm_c/src"
 #         "consumer_tiff2rgba/src" "security_blowfish_d/src")
       
-#   cant=("consumer_mad/src" "office_ispell/src" "office_ghostscript/src" "office_rsynth/src"
-#   "security_pgp_d/src" "security_pgp_e/src" "telecom_gsm/src")
+#   #cant=("consumer_mad/src" "office_ispell/src" "office_ghostscript/src" "office_rsynth/src"
+#   #"security_pgp_d/src" "security_pgp_e/src" "telecom_gsm/src")
   
 #   walk "${dirs[@]}"
 # }
 
 function cBench(){
    dirs=("automotive_bitcount/src" "automotive_qsort1/src" "bzip2e/src" "consumer_jpeg_d/src"
-     "consumer_lame/src" "consumer_tiff2bw/src" "consumer_tiffmedian/src" "network_dijkstra/src" 
+     "consumer_lame/src" "consumer_tiffmedian/src" "network_dijkstra/src" 
      "network_patricia/src" "office_stringsearch1/src" "security_blowfish_e/src" "security_rijndael_e/src"
       "security_sha/src"  "telecom_adpcm_c/src" "telecom_CRC32/src"
      )
      
-  cant=("consumer_mad/src" "office_ispell/src" "office_ghostscript/src" "office_rsynth/src"
-  "security_pgp_d/src" "security_pgp_e/src" "telecom_gsm/src")
+   cant=("consumer_mad/src" "office_ispell/src" "office_ghostscript/src" "office_rsynth/src"
+   "security_pgp_d/src" "security_pgp_e/src" "telecom_gsm/src")
   
-  walk "${dirs[@]}"
-}
+   walk "${dirs[@]}"
+ }
 
 function cpu2006(){
   dirs=("400.perlbench/rbc/" "401.bzip2/rbc/" "403.gcc/rbc/" "429.mcf/rbc/"

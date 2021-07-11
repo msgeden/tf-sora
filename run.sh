@@ -9,7 +9,8 @@ function cleanup() {
   rm -f *.rbc
   rm -f *.ibc
   rm -f *.o
-   rm -f *.s
+  rm -f *.s
+  rm -f *.exe
 }
 
 function cleanup_all() {
